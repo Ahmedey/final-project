@@ -231,12 +231,12 @@ nav .navbar .links li:hover .js-sub-menu {
   background-size: cover;
   height: 637px;
   /* height: 500px; */
-  width: 90%;
+  width: 100%;
   transform: scale(1);
   overflow: hidden;
   transition: transform 10000ms ease;
   /* z-index: 9999; */
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
 }
 .banner .container {
   position: relative;
@@ -343,19 +343,20 @@ nav .navbar .links li:hover .js-sub-menu {
 }
 .sec-title_main {
   margin: 0;
-  font-size: 50px;
+  font-size: 3.125rem;
   color: #132742;
   font-weight: var(--font-medium);
   line-height: 1.2em;
   margin-bottom: -10px;
 }
 .service_images {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   /* position: relative; */
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 .service_img img {
   /* position: relative; */
@@ -407,9 +408,12 @@ nav .navbar .links li:hover .js-sub-menu {
 /* Our villas */
 .our_villas {
   margin-top: 6rem;
+  /* padding: 7.5rem 0 0; */
 }
 .our_villas .container {
-  padding: 5rem;
+  max-width: 1400px;
+  /* padding: 5rem; */
+  margin: 0 auto;
 }
 .rent_card {
   /* box-shadow: 2px 2px 3px 2px #000; */
@@ -512,6 +516,112 @@ nav .navbar .links li:hover .js-sub-menu {
   list-style: none;
 }
 
+/*   DISCOVER VILLAS SECTION */
+
+.discover_villas {
+  /* position: relative; */
+  padding: 7.5rem 0;
+}
+.discover_villas .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destination {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  /* grid-template-rows: 1fr 1fr; */
+  gap: 1rem;
+  /* margin: 2rem; */
+  justify-content: center;
+  align-items: center;
+}
+.sec-title {
+  grid-column-start: span 2;
+  /* background-color: #f25a43; */
+}
+.country_name {
+  position: relative;
+  cursor: pointer;
+}
+.info {
+  /* position: relative; */
+}
+.item_one {
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  text-transform: capitalize;
+}
+.imge1 img{
+  /* width: 100%; */
+  /* height: 100%; */
+  /* position: relative; */
+}
+
+.villa_rent {
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #fff;
+  display: inline-table;
+  padding: 1.2px 20px;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  text-align: center;
+  margin: 0 auto;
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  transition: all 500ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  
+}
+.imge1 img:hover .villa_rent {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+  transform:  translate3d(0 ,0, 0);
+}
+.villa_rent:hover {
+  visibility: visible;
+  opacity: 1;
+}
+.africa , .thailand{
+  border-radius: 50%;
+}
+
+.destination_offer {
+  position: relative;
+  background-color: #537eac;
+  width: 100%;
+  height: auto;
+  max-width: 270px;
+  padding: 35px 40px 40px;
+  min-height: 270px;
+  margin: auto;
+  overflow: hidden;
+}
+.destination_offer__title {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 11px 0 42px;
+}
+
+
 @media (max-width: 1300px) {
   nav .navbar {
     max-width: 100%;
@@ -547,12 +657,26 @@ nav .navbar .links li:hover .js-sub-menu {
     padding: 0;
     background-color: #fff;
   } */
+  .service_one .container {
+    /* max-width: 1596px;  */
+    padding: 3rem;
+  }
+  .service_images {
+    grid-template-columns: 1fr 1fr;
+  }
+ 
   .villa_grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  .villa_card-title {
+    font-size: 1rem;
+  }
+  .sec-title_main {
+    font-size: 2rem;
+  }
 }
-@media (max-width: 800px) {
+@media (max-width: 992px) {
   .navbar .bx-menu {
     display: block;
   }
@@ -662,14 +786,31 @@ nav .navbar .links li:hover .js-sub-menu {
   .banner-image {
     margin-left: 1.4rem;
   }
+  .discover_villas {
+    /* position: relative; */
+    /* padding: 9.5rem 0; */
+  }
   .villa_grid {
-    display: flex;
-    flex-wrap: wrap;
-    /* grid-template-columns: repeat(2 1fr); */
+    grid-template-columns: repeat(2 1fr);
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    /* flex-direction: column; */
+    margin-left: .5rem;
+    margin-right: .5rem;
+    
+  }
+  .service_images {
+    grid-template-columns: 1fr 1fr;
+    
+  }
+  .discover_villas .container {
+    max-width: 960px;
+    /* margin: 0 auto; */
+  }
+  .destination {
+    grid-template-columns: repeat(3, 2fr);
+    margin-left: .5rem;
+    margin-right: .5rem;
   }
 }
 @media (max-width: 500px) {
@@ -685,5 +826,26 @@ nav .navbar .links li:hover .js-sub-menu {
   }
   .banner-image {
     margin-left: 0.8rem;
+  }
+  .sec-title_main {
+    font-size: 1.8rem;
+  }
+  .service_images {
+    grid-template-columns: 1fr;
+  }
+  .villa_grid {
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    
+  }
+
+  .destination {
+    /* display: grid; */
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: .5rem;
+    margin-right: .5rem;
+    /* grid-template-rows: 1fr; */
   }
 }
